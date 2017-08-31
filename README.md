@@ -10,4 +10,4 @@ Learnt how to use variables, functions, scope, if and else statements using C# l
 
 Preview: 
 --------
-![Alt text](file:///Users/Ben/Google%20Drive/Programming/NumberWizard%20Images/NumberWizardDemo.png)
+![Alt text](/documents/Unity/Number WizardNumberWizardDemo.png)

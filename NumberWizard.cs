@@ -2,14 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-int max = 1000;
-int min = 1;
-int guess = 500;
-
 public class NumberWizard : MonoBehaviour {
+
+	int max; 
+    int min;
+    int guess; 
 
 	// Use this for initialization
 	void Start () {
+        StartGame();
+
+	}
+
+	void StartGame (){
+
+		 max = 1000;
+         min = 1;
+         guess = 500;
+		
+
+		print("==========================");
 		print("Welcome To Number Wizard");
 		print("Pick a number, but don't tell me");
 
@@ -19,19 +31,31 @@ public class NumberWizard : MonoBehaviour {
 		print("Is the number higher or lower than " +guess);
 		print("Up = higher, down = lower, return/enter = equal");
 
+		max = max + 1;
 	}
+
 	
 	// Update is called once per frame
 	void Update (){
 		if (Input.GetKeyDown (KeyCode.UpArrow)) {
-			print ("Up arrow was pressed");
+			// print ("Up arrow was pressed");
 			min = guess;
+            NextGuess();
 		} else if (Input.GetKeyDown (KeyCode.DownArrow)) {
-			print ("Down arrow was pressed");
-		} else (Input.GetKeyDown (KeyCode.Return)) {
-			print("I won!");
-		}
-	} 
+			// print ("Down arrow was pressed");
+			max = guess;
+            NextGuess();
+		} else if (Input.GetKeyDown (KeyCode.Return)) {
+			print ("I won!");	
+		} 
+	}
+
+	void NextGuess (){
+	    guess = (max + min) / 2;
+		print ("Higher or lower than " + guess);
+		print("Up = higher, down = lower, return/enter = equal");
+
+	}
 }
 
 
